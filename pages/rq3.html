@@ -33,9 +33,172 @@
 
 <div class="container py-5">
   <h1 class="section-title">RQ3: Which and to what extent publicly available tools support the formalisms?</h1>
-  <p>This page contains the analysis for RQ3...</p>
+
+  <h2 class="subsection-title mt-4">Tools Analysis</h2>
+
+  <table class="table table-sm align-middle tools-table">
+    <caption class="text-start text-center">
+      [Tab.1 - Identified tools (grey-highlighted rows indicate baseline tools that support the core formalism
+      and have been used as foundations for ROS-based packages).]
+    </caption>
+    <thead class="table-light">
+      <tr class="table-header">
+        <th scope="col">Name</th>
+        <th scope="col">Scope</th>
+        <th scope="col">Description</th>
+        <th scope="col">Documentation Reference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- BT -->
+      <tr class="table-group">
+        <td colspan="4"><em><strong>BT</strong></em></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">BehaviorTree.CPP</td>
+        <td>Execution; Debugging</td>
+        <td>C++ library for executing behavior trees. Provides a rich set of control nodes, logging facilities, and interfaces for debugging purposes.</td>
+        <td><a href="https://www.behaviortree.dev" target="_blank" rel="noopener" class="link-custom">behaviortree.dev</a></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">PyTrees</td>
+        <td>Execution; Monitoring; Debugging</td>
+        <td>Python library for executing behavior trees, designed to facilitate the rapid development of medium-sized decision-making engines. Offers minimal visualizations for monitoring and debugging purposes.</td>
+        <td><a href="https://py-trees.readthedocs.io/en/devel/" target="_blank" rel="noopener" class="link-custom">py-trees.readthedocs.io</a></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">Groot</td>
+        <td>Modeling; Monitoring; Debugging</td>
+        <td>Graphical editor for behavior trees. Allows tree design, log playback, and real-time introspection when connected to BehaviorTree.CPP.</td>
+        <td><a href="https://www.behaviortree.dev/groot" target="_blank" rel="noopener" class="link-custom">behaviortree.dev/groot</a></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">Forester</td>
+        <td>Execution</td>
+        <td>Orchestration engine implementing behavior trees. Supports exporting trees for use with the ROS navigation library.</td>
+        <td><a href="https://forester-bt.github.io/forester/" target="_blank" rel="noopener" class="link-custom">forester-bt.github.io/forester</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">BehaviorTree.ROS2</td>
+        <td>Execution</td>
+        <td>ROS-compatible implementation of BehaviorTree.CPP.</td>
+        <td><a href="https://www.behaviortree.dev/docs/ros2_integration/" target="_blank" rel="noopener" class="link-custom">behaviortree.dev/docs/ros2_integration</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">PyTrees ROS</td>
+        <td>Execution</td>
+        <td>ROS-compatible implementation of PyTrees.</td>
+        <td><a href="https://py-trees-ros.readthedocs.io/en/devel/" target="_blank" rel="noopener" class="link-custom">py-trees-ros.readthedocs.io</a></td>
+      </tr>
+
+      <!-- SM -->
+      <tr class="table-group">
+        <td colspan="4"><em><strong>SM</strong></em></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">SMACH</td>
+        <td>Execution; Monitoring</td>
+        <td>Python library for implementing hierarchical state machines in ROS. Provides a runtime viewer that displays active states but offers no modeling interfaces.</td>
+        <td><a href="https://github.com/ros/executive_smach" target="_blank" rel="noopener" class="link-custom">github.com/ros/executive_smach</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">FlexBE</td>
+        <td>Modeling; Execution; Monitoring; Debugging</td>
+        <td>Behavior engineering toolkit with a graphical state-machine editor, execution engine, onboard monitoring, and debugging tools.</td>
+        <td><a href="https://github.com/flexbe" target="_blank" rel="noopener" class="link-custom">github.com/flexbe</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">YASMIN</td>
+        <td>Modeling; Execution; Monitoring</td>
+        <td>ROS package for designing and executing state machines using Python. Provides a shared blackboard for data exchange and a lightweight execution engine.</td>
+        <td><a href="https://github.com/uleroboticsgroup/yasmin" target="_blank" rel="noopener" class="link-custom">github.com/uleroboticsgroup/yasmin</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">RAFCON</td>
+        <td>Modeling; Execution; Monitoring; Debugging</td>
+        <td>Graphical tool for hierarchical and concurrent state machines. Includes visualization, variable inspection, breakpoints, and step-by-step debugging.</td>
+        <td><a href="https://github.com/DLR-RM/RAFCON/" target="_blank" rel="noopener" class="link-custom">github.com/DLR-RM/RAFCON</a></td>
+      </tr>
+
+      <!-- HTN -->
+      <tr class="table-group">
+        <td colspan="4"><em><strong>HTN</strong></em></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">Pyhop</td>
+        <td>Planning</td>
+        <td>Lightweight Python HTN planner, suitable for prototyping due to its simple implementation.</td>
+        <td><a href="https://bitbucket.org/dananau/pyhop/src/master/" target="_blank" rel="noopener" class="link-custom">bitbucket.org/dananau/pyhop</a></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">Planning</td>
+        <td>SHOP, SHOP2, JSHOP2</td>
+        <td>Domain-independent automated planning systems based on ordered task decomposition.</td>
+        <td><a href="https://www.cs.umd.edu/projects/shop/description.html" target="_blank" rel="noopener" class="link-custom">cs.umd.edu/projects/shop</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">ROSPlan</td>
+        <td>Planning; Execution</td>
+        <td>ROS-integrated planning framework that generates plans and dispatches them to ROS components.</td>
+        <td><a href="https://kcl-planning.github.io/ROSPlan/" target="_blank" rel="noopener" class="link-custom">kcl-planning.github.io/ROSPlan</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">PlanSys2</td>
+        <td>Planning; Execution</td>
+        <td>ROS package providing a PDDL-based planning system. After computing a plan, it automatically converts it into an executable behavior tree, enabling integration with robot controllers.</td>
+        <td><a href="https://plansys2.github.io/" target="_blank" rel="noopener" class="link-custom">plansys2.github.io</a></td>
+      </tr>
+
+      <!-- BPMN -->
+      <tr class="table-group">
+        <td colspan="4"><em><strong>BPMN</strong></em></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">Camunda</td>
+        <td>Modeling; Execution; Monitoring; Debugging</td>
+        <td>Process orchestration BPMN platform. Provides graphical modeling tools, workflow engines, REST interfaces, and dashboards for runtime monitoring and debugging.</td>
+        <td><a href="https://camunda.com/" target="_blank" rel="noopener" class="link-custom">camunda.com</a></td>
+      </tr>
+
+      <tr class="baseline-row">
+        <td style="font-weight: 500;">bpmn.io</td>
+        <td>Modeling</td>
+        <td>Web-based BPMN editor and viewer for designing and visualizing process models. Serves as the front-end basis for many BPMN-based applications and provides many add-ons that can extend its scope.</td>
+        <td><a href="https://bpmn.io/" target="_blank" rel="noopener" class="link-custom">bpmn.io</a></td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: 500;">FaMe</td>
+        <td>Modeling; Execution; Monitoring</td>
+        <td>BPMN-driven framework for multi-robot system development. Provides BPMN modeling, automatic ROS-compliant mission configuration, and an execution engine implemented as a ROS node.</td>
+        <td><a href="https://github.com/SaraPettinari/fame" target="_blank" rel="noopener" class="link-custom">github.com/SaraPettinari/fame</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  &nbsp;
+  
+  <h2 class="subsection-title mt-4">Validation</h2>
+  <p> ... </p>
 
 </div>
+
 
 <footer>
   © 2025 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
