@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="RQ2 - Peculiarities & Limitations">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RQ2 - Peculiarities &amp; Limitations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="/index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../rq2.html"><em>Go back to:</em> Peculiarities &amp;
+                            Limitations</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="section-title">
+            Humanoid Robot
+        </h1>
+
+        <div class="row mt-4">
+            <div class="col-md-9">
+                <section class="section-outline mb-4">
+                    <h2 class="scenario-title">Description</h2>
+                    <p style="text-align: justify;">
+                        A humanoid robot is tasked with interacting safely and intuitively with nearby humans while
+                        performing a set
+                        of predefined daily activities. The robot continuously monitors its environment for safety, if a
+                        bumper is
+                        pressed, it immediately backs away and warns by saying “Ouch.”
+                        When idle or uncertain, the robot asks the user what to do next. If the user provides a
+                        suggestion, the
+                        robot updates its current activity accordingly. If the robot already knows what to do, it
+                        proceeds
+                        autonomously.
+                        The robot can perform several activities, including sitting down, standing up, playing a ball
+                        game, saying
+                        goodbye, and going to sleep.
+                        During the ball game, the robot searches for the ball, approaches it, grasps it, and can track
+                        or throw it
+                        as required by the game. If the ball moves or is thrown again, the robot interrupts its current
+                        motion and
+                        immediately begins approaching the ball’s new location.
+                        When the user ends the interaction, the robot waves or says goodbye. If instructed to sleep—or
+                        if no further
+                        tasks are available—the robot moves into a safe resting position.
+                    </p>
+                    <p style="font-style: italic;"> Colledanchise, Michele, and Petter Ögren. Behavior trees in robotics
+                        and AI: An introduction. CRC Press, 2018.
+                    </p>
+                    <div class="scenario-tags mt-2 mb-3">
+                        <span class="tag">Reactive behavior</span>
+                        <span class="tag">Decision making</span>
+                        <span class="tag">Human–robot interaction</span>
+                    </div>
+                </section>
+
+                <section id="scenario-warehouse" class="section-outline mb-4">
+                    <h2 class="scenario-title">BT</h2>
+                    <img src="/img/scenarios/bt/humanoid-robot.png" alt="Humanoid Robot - Behavior Tree" class="img-fluid">
+                    <caption>Humanoid Robot - Behavior Tree from the referenced book</caption>
+                </section>
+
+                <section id="scenario-warehouse" class="section-outline mb-4">
+                    <h2 class="scenario-title">SM</h2>
+                    <img src="/img/scenarios/sm/humanoid-robot.png" alt="Humanoid Robot - State Machine" class="img-fluid">
+                    <caption>Humanoid Robot - State Machine from the referenced book</caption>
+                </section>
+
+                <section id="scenario-warehouse" class="section-outline mb-4">
+                    <h2 class="scenario-title">HTN</h2>
+                </section>
+
+                <section id="scenario-warehouse" class="section-outline mb-4">
+                    <h2 class="scenario-title">BPMN</h2>
+
+                </section>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        © 2025 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

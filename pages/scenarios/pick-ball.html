@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="RQ2 - Peculiarities & Limitations">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RQ2 - Peculiarities &amp; Limitations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="/index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../rq2.html"><em>Go back to:</em> Peculiarities &amp;
+              Limitations</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="section-title">
+      Pick Ball
+    </h1>
+
+    <div class="row mt-4">
+      <div class="col-md-9">
+        <section class="section-outline mb-4">
+          <h2 class="scenario-title">Description</h2>
+          <p style="text-align: justify;">
+            A robot is tasked to find a ball, pick it up, and place it into a bin. If the
+            robot fails to complete the task, it should go to a safe position and wait for a human
+            operator. After picking up the ball, the robot moves towards the bin. While moving towards the bin, an
+            external entity takes the ball from
+            the robot’s gripper and immediately throws it in front of the robot,
+            where it can be seen. The robot aborts the execution of moving and
+            it starts to approach the ball again.
+          </p>
+          <p style="font-style: italic;"> Colledanchise, Michele, and Petter Ögren. Behavior trees in robotics and AI: An introduction. CRC Press, 2018.
+          </p>
+          <div class="scenario-tags mt-2 mb-3">
+            <span class="tag">Reactive behavior</span>
+          </div>
+        </section>
+
+        <section id="scenario-warehouse" class="section-outline mb-4">
+          <h2 class="scenario-title">BT</h2>
+        </section>
+
+        <section id="scenario-warehouse" class="section-outline mb-4">
+          <h2 class="scenario-title">SM</h2>
+          <img src="/img/scenarios/sm/pick-ball.png" alt="Pick Ball - State Machine" class="img-fluid">
+          <caption>Pick Ball - State Machine from the referenced book</caption>
+        </section>
+
+        <section id="scenario-warehouse" class="section-outline mb-4">
+          <h2 class="scenario-title">HTN</h2>
+        </section>
+
+        <section id="scenario-warehouse" class="section-outline mb-4">
+          <h2 class="scenario-title">BPMN</h2>
+
+        </section>
+
+      </div>
+
+
+    </div>
+  </div>
+
+    <footer>
+      © 2025 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

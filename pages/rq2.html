@@ -8,7 +8,7 @@
   <title>RQ2 - Peculiarities &amp; Limitations</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
@@ -16,7 +16,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
     <div class="container-fluid px-4">
-      <a class="navbar-brand" href="../index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+      <a class="navbar-brand" href="/index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,7 +47,7 @@
           The following mission peculiarities capture specific aspects of how formalisms model robotic missions.
         </p>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Reactive behavior</h3>
@@ -56,7 +56,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Decision making</h3>
@@ -65,7 +65,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Time-dependent behavior</h3>
@@ -74,7 +74,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Task status</h3>
@@ -83,7 +83,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Robot–robot interaction</h3>
@@ -92,7 +92,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Human–robot interaction</h3>
@@ -101,7 +101,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Robot–external system interaction</h3>
@@ -110,7 +110,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">State saving and task resuming</h3>
@@ -119,7 +119,7 @@
           </p>
         </div>
       </div>
-    
+
       <div class="col-md-6 col-lg-4 mb-3">
         <div class="pec-card">
           <h3 class="pec-title">Explicit waiting</h3>
@@ -129,13 +129,15 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row mt-4" id="scenarios">
       <h2 class="subsection-title mb-4">Selected Scenarios</h2>
       <div class="col-md-3 mb-4">
         <div class="on-this-page">
           <h2 class="on-this-page-title">Scenarios Outline</h2>
           <ul class="on-this-page-list">
+            <li><a href="#scenario-pick-ball">Pick Ball</a></li>
+            <li><a href="#scenario-humanoid-robot">Humanoid Robot</a></li>
             <li><a href="#scenario-vital-sign">Vital Signs Monitoring</a></li>
             <li><a href="#scenario-keeping-clean">Keeping Clean</a></li>
             <li><a href="#scenario-food-logistics">Food Logistics</a></li>
@@ -143,13 +145,56 @@
             <li><a href="#scenario-welcoming-people">Welcoming People to the Hospital</a></li>
             <li><a href="#scenario-deliver-goods">Deliver Goods</a></li>
             <li><a href="#scenario-suave">SUAVE</a></li>
-            <li><a href="#scenario-pick-place">Pick and Place</a></li>
             <li><a href="#scenario-smart-agri">Smart Agriculture</a></li>
+            <li><a href="#scenario-warehouse">Warehouse Automation</a></li>
           </ul>
         </div>
       </div>
 
       <div class="col-md-9">
+        <section id="scenario-pick-ball" class="section-outline mb-4">
+          <h2 class="scenario-title">Pick Ball</h2>
+          <p style="text-align: justify;">
+            A robot is tasked to find a ball, pick it up, and place it into a bin. If the
+            robot fails to complete the task, it should go to a safe position and wait for a human
+            operator. After picking up the ball, the robot moves towards the bin. While moving towards the bin, an
+            external entity takes the ball from
+            the robot’s gripper and immediately throws it in front of the robot,
+            where it can be seen. The robot aborts the execution of moving and
+            it starts to approach the ball again.
+          </p>
+          <div class="scenario-tags mt-2 mb-3">
+            <span class="tag">Reactive behavior</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.location='scenarios/pick-ball.html' "
+            target="_blank">See Modeled Mission</button>
+        </section>
+
+        <section id="scenario-humanoid-robot" class="section-outline mb-4">
+          <h2 class="scenario-title">Humanoid Robot</h2>
+          <p style="text-align: justify;">
+            A humanoid robot is tasked with interacting safely and intuitively with nearby humans while performing a set
+            of predefined daily activities. The robot continuously monitors its environment for safety, if a bumper is
+            pressed, it immediately backs away and warns by saying “Ouch.”
+            When idle or uncertain, the robot asks the user what to do next. If the user provides a suggestion, the
+            robot updates its current activity accordingly. If the robot already knows what to do, it proceeds
+            autonomously.
+            The robot can perform several activities, including sitting down, standing up, playing a ball game, saying
+            goodbye, and going to sleep.
+            During the ball game, the robot searches for the ball, approaches it, grasps it, and can track or throw it
+            as required by the game. If the ball moves or is thrown again, the robot interrupts its current motion and
+            immediately begins approaching the ball’s new location.
+            When the user ends the interaction, the robot waves or says goodbye. If instructed to sleep—or if no further
+            tasks are available—the robot moves into a safe resting position.
+          </p>
+          <div class="scenario-tags mt-2 mb-3">
+            <span class="tag">Reactive behavior</span>
+            <span class="tag">Decision making</span>
+            <span class="tag">Human–robot interaction</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.location='scenarios/humanoid-robot.html' "
+          target="_blank">See Modeled Mission</button>
+        </section>
 
         <section id="scenario-vital-sign" class="section-outline mb-4">
           <h2 class="scenario-title">Vital Signs Monitoring</h2>
@@ -178,7 +223,8 @@
         <section id="scenario-keeping-clean" class="section-outline mb-4">
           <h2 class="scenario-title">Keeping Clean</h2>
           <p style="text-align: justify;">
-            Every room that reaches more than 1 cfu/cm<sup>2</sup> of Staphylococcus aureus must be cleaned within the next 30
+            Every room that reaches more than 1 cfu/cm<sup>2</sup> of Staphylococcus aureus must be cleaned within the
+            next 30
             minutes. The assigned robot must check if it has all the resources to fulfill the tasks. In the case of
             missing equipment, the robot must go to the storage room to collect the equipment or assign the
             go-to-storage task to a colleague. As the robot reaches the room, it must check if it is occupied. If the
@@ -327,20 +373,6 @@
           <button class="btn btn-secondary btn-sm">See Modeled Mission</button>
         </section>
 
-        <section id="scenario-pick-place" class="section-outline mb-4">
-          <h2 class="scenario-title">Pick and Place</h2>
-          <p style="text-align: justify;">
-            <p style="color: red;">OPPURE LO SCENARIO AUCH!</p>
-            A robot is tasked to find a ball, pick it up, and place it into a bin. If the robot fails to complete the
-            task, it should go to a safe position and wait for a human operator. After picking up the ball, the robot
-            moves towards the bin. While moving towards the bin, an external entity takes the ball from the robot’s
-            gripper and immediately throws it in front of the robot, where it can be seen. The robot aborts the
-            execution of moving and it starts to approach the ball again.
-          </p>
-          <button class="btn btn-secondary btn-sm">See Modeled Mission</button>
-        </section>
-
-
         <section id="scenario-smart-agri" class="section-outline mb-4">
           <h2 class="scenario-title">Smart Agriculture</h2>
           <p style="text-align: justify;">
@@ -357,8 +389,41 @@
             <span class="tag">Reactive behavior</span>
             <span class="tag">Decision making</span>
             <span class="tag">Robot–robot interaction</span>
+            <span class="tag">Explicit waiting</span>
           </div>
           <button class="btn btn-secondary btn-sm">See Modeled Mission</button>
+        </section>
+
+        <section id="scenario-warehouse" class="section-outline mb-4">
+          <h2 class="scenario-title">Warehouse Automation</h2>
+          <p style="text-align: justify;">
+            New orders arrive periodically and must be processed by coordinating workers and a mobile robot in the
+            warehouse. When a new order is detected, the system identifies the list of raw materials required for its
+            fulfillment. Before starting, the system assigns the order to an available robot.
+            For each required material, the system also determines the storage location. A worker must meet the robot at
+            the designated location and load the correct amount of material.
+            After the loading operation, the worker confirms completion, and the system verifies that the loaded
+            quantity matches the expected weight. If the check fails, the worker must correct the loading before the
+            robot proceeds.
+            Once loaded, the robot transports the material to the mixing area, where it is manually unloaded by a
+            worker. The process then continues with the next material in the order. If all materials have been
+            delivered, the worker initiates the mixing procedure.
+            After the mixing phase begins, the system updates the order status to indicate completion. The robot then
+            returns to its home position and becomes available for the next order. If an error occurs at any point—for
+            example, a mismatch in material loading or an operational issue—the system notifies the worker, who must
+            decide whether to cancel the order or complete the remaining steps manually.
+          </p>
+          <p> Rey, Rafael, et al. "Human-robot co-working system for warehouse automation." 2019 24th IEEE International
+            Conference on Emerging Technologies and Factory Automation (ETFA). IEEE, 2019.
+          </p>
+          <div class="scenario-tags mt-2 mb-3">
+            <span class="tag">Reactive behavior</span>
+            <span class="tag">Decision making</span>
+            <span class="tag">Human–robot interaction</span>
+            <span class="tag">Robot–external system interaction</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.location='scenarios/warehouse-automation.html' "
+            target="_blank">See Modeled Mission</button>
         </section>
 
       </div>
@@ -385,7 +450,7 @@
               <td class="empty">○</td>
               <td class="full">●</td>
             </tr>
-      
+
             <tr>
               <td>Decision making</td>
               <td class="full">●</td>
@@ -393,7 +458,7 @@
               <td class="full">●</td>
               <td class="full">●</td>
             </tr>
-      
+
             <tr>
               <td>Time-dependent behavior</td>
               <td class="half">◐</td>
@@ -401,7 +466,7 @@
               <td class="empty">○</td>
               <td class="full">●</td>
             </tr>
-      
+
             <tr>
               <td>Task Status</td>
               <td class="full">●</td>
@@ -409,7 +474,7 @@
               <td class="empty">○</td>
               <td class="empty">○</td>
             </tr>
-      
+
             <tr>
               <td>Robot-robot interaction</td>
               <td class="half">◐</td>
@@ -417,7 +482,7 @@
               <td class="half">◐</td>
               <td class="full">●</td>
             </tr>
-      
+
             <tr>
               <td>Human-robot interaction</td>
               <td class="half">◐</td>
@@ -425,7 +490,7 @@
               <td class="half">◐</td>
               <td class="full">●</td>
             </tr>
-      
+
             <tr>
               <td>Robot-external system interaction</td>
               <td class="half">◐</td>
@@ -433,7 +498,7 @@
               <td class="half">◐</td>
               <td class="full">●</td>
             </tr>
-      
+
             <tr>
               <td>State saving and task resuming</td>
               <td class="half">◐</td>
@@ -441,7 +506,7 @@
               <td class="empty">○</td>
               <td class="empty">○</td>
             </tr>
-      
+
             <tr>
               <td>Explicit waiting</td>
               <td class="empty">○</td>
@@ -449,14 +514,14 @@
               <td class="empty">○</td>
               <td class="full">●</td>
             </tr>
-      
+
           </tbody>
         </table>
       </div>
-      
+
+    </div>
+
   </div>
-
-
 
 
   <footer>
