@@ -5,11 +5,12 @@
   <meta name="description" content="RQ1 – Control Structures and Mission Concepts">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RQ1 – Control Structures</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="../css/style.css">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
@@ -32,14 +33,199 @@
 
 <div class="container py-5">
   <h1 class="section-title">RQ1: How can control structures and mission concepts be modeled with the formalisms?</h1>
-  <p>This page contains the analysis for RQ1...</p>
+  <p class="text-muted">
+    This page summarizes how four mission-specification formalisms: Behavior Trees (BT), State Machines (SM),
+    Hierarchical Task Networks (HTN), and BPMN, represent fundamental control-flow constructs and mission-level concepts.
+  </p>
 
+  <div class="row mt-4">
+    <!-- Optional outline / navigation -->
+    <div class="col-lg-3 mb-4">
+      <div class="on-this-page">
+        <h2 class="on-this-page-title">On this page</h2>
+        <ul class="on-this-page-list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#control-structures">Control structures</a></li>
+          <li><a href="#mission-concepts">Mission concepts</a></li>
+          <li><a href="#mapping-table">Concept mapping</a></li>
+          <li><a href="#takeaways">Key takeaways</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+      <!-- OVERVIEW -->
+      <section id="overview" class="mb-4">
+        <h2 class="scenario-title">Overview</h2>
+        <p style="text-align: justify; margin-bottom: 0;">
+          We compare the formalisms along two dimensions:
+          (i) how they encode core control-flow constructs (sequential, conditional, parallel, and loop),
+          and (ii) how they capture mission concepts such as skills, tasks, data, communication, events,
+          errors, and pre/post-conditions at the mission level.
+        </p>
+      </section>
+
+      <!-- CONTROL STRUCTURES -->
+      <section id="control-structures" class="mb-4">
+        <h2 class="scenario-title">Control structures</h2>
+        <p class="text-muted" style="margin-bottom: 1rem;">
+          The following blocks summarize the primary constructs used by each formalism.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="pec-card">
+              <h3 class="pec-title">Sequential</h3>
+              <ul class="mb-0">
+                <li><strong>BT:</strong> Sequence / Fallback nodes (left-to-right execution).</li>
+                <li><strong>SM:</strong> event-driven progression through states.</li>
+                <li><strong>HTN:</strong> ordered methods (subtasks executed left-to-right).</li>
+                <li><strong>BPMN:</strong> sequence flow from start to end events.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="pec-card">
+              <h3 class="pec-title">Parallel</h3>
+              <ul class="mb-0">
+                <li><strong>BT:</strong> Parallel node executes children concurrently.</li>
+                <li><strong>SM:</strong> Fork activates multiple states.</li>
+                <li><strong>HTN:</strong> unordered methods (parallelism depends on executor).</li>
+                <li><strong>BPMN:</strong> AND gateway splits into concurrent branches.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="pec-card">
+              <h3 class="pec-title">Conditional</h3>
+              <ul class="mb-0">
+                <li><strong>BT:</strong> conditions + fallback/sequence patterns.</li>
+                <li><strong>SM:</strong> Choice pseudostate with guarded transitions.</li>
+                <li><strong>HTN:</strong> alternative methods with preconditions.</li>
+                <li><strong>BPMN:</strong> XOR gateway with conditional flows (and optional default).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="pec-card">
+              <h3 class="pec-title">Loop</h3>
+              <ul class="mb-0">
+                <li><strong>BT:</strong> Repeat decorators or looping subtrees.</li>
+                <li><strong>SM:</strong> transition cycles (self-loops / cyclic transitions).</li>
+                <li><strong>HTN:</strong> recursion via repeated task decomposition.</li>
+                <li><strong>BPMN:</strong> loop activities, gateways, and multi-instance tasks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MISSION CONCEPTS -->
+      <section id="mission-concepts" class="mb-4">
+        <h2 class="scenario-title">Mission concepts</h2>
+        <p style="text-align: justify;">
+          We adopt a mission-level perspective and focus on how each formalism expresses core abstractions:
+          <strong>skills</strong> (basic robot capabilities), <strong>tasks</strong> (compositions of skills),
+          and <strong>missions</strong> (coordinated tasks with precedence and concurrency).
+          We also consider how data, events, errors, communication, and pre/post-conditions can be represented.
+        </p>
+      </section>
+
+      <!-- CONCEPT MAPPING TABLE -->
+      <section id="mapping-table" class="mb-4">
+        <h2 class="scenario-title">Concept mapping across formalisms</h2>
+
+        <div class="table-responsive mt-2">
+          <table class="table table-bordered table-sm align-middle tools-table">
+            <thead class="table-light">
+              <tr>
+                <th>Concept</th>
+                <th>BT</th>
+                <th>SM</th>
+                <th>HTN</th>
+                <th>BPMN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Skill</strong></td>
+                <td>Action node (leaf)</td>
+                <td>Simple state</td>
+                <td>Primitive task</td>
+                <td>Task (atomic activity)</td>
+              </tr>
+              <tr>
+                <td><strong>Task</strong></td>
+                <td>Subtree</td>
+                <td>Composite state</td>
+                <td>Compound task</td>
+                <td>Subprocess / Call activity</td>
+              </tr>
+              <tr>
+                <td><strong>Data</strong></td>
+                <td>Inputs / blackboard (implementation-dependent)</td>
+                <td>State variables (implementation-dependent)</td>
+                <td>Task parameters (limited built-in storage)</td>
+                <td>Data objects + process variables</td>
+              </tr>
+              <tr>
+                <td><strong>Communication</strong></td>
+                <td>Implementation-dependent</td>
+                <td>Implementation-dependent</td>
+                <td>Implementation-dependent</td>
+                <td>Message / signal events</td>
+              </tr>
+              <tr>
+                <td><strong>Events</strong></td>
+                <td>Not first-class (via ticking + conditions)</td>
+                <td>Event-triggered transitions</td>
+                <td>Not first-class</td>
+                <td>First-class events (multiple types)</td>
+              </tr>
+              <tr>
+                <td><strong>Errors</strong></td>
+                <td>Failure propagation</td>
+                <td>Error transitions (when state active)</td>
+                <td>Not first-class</td>
+                <td>Error events</td>
+              </tr>
+              <tr>
+                <td><strong>Pre/Post-conditions</strong></td>
+                <td>Patterns (e.g., guarded actions)</td>
+                <td>Guards / protocol transitions</td>
+                <td>Native (tasks + methods)</td>
+                <td>Not native (approximations/extensions)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-muted mb-0">
+          This mapping reflects typical mission-level usage patterns and the constructs most commonly employed in robotics toolchains.
+        </p>
+      </section>
+
+      <!-- TAKEAWAYS -->
+      <section id="takeaways" class="section-outline mb-4">
+        <h2 class="scenario-title">Key takeaways</h2>
+        <ul class="mb-0">
+          <li><strong>All</strong> formalisms can express core control structures, but with different execution semantics.</li>
+          <li><strong>BT/SM</strong> are strong for mission execution and reactive control; many mission concepts depend on implementation details.</li>
+          <li><strong>HTN</strong> emphasizes planning and refinement via decomposition and preconditions.</li>
+          <li><strong>BPMN</strong> offers explicit constructs for communication and coordination, especially for human/external-system interaction.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
 </div>
 
 <footer>
-  © 2025 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
+  © 2026 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
 </footer>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/script.js"></script>

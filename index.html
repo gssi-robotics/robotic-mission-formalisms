@@ -3,8 +3,7 @@
 
 <head>
    <meta charset="utf-8">
-   <meta name="description"
-      content="Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis">
+   <meta name="description" content="Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <title>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</title>
    <!-- Style-->
@@ -35,7 +34,7 @@
 
    <div class="container py-5">
       <div class="hero-section text-center">
-         <h1 class="hero-title">Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</h1>
+         <h1 class="hero-title">Formalisms for Robotic Mission Specification and Execution:<br> A Comparative Analysis</h1>
          <p class="text-muted mt-3">Replication Package</p>
       </div>
    </div>
@@ -43,24 +42,61 @@
    <div class="container px-4">
 
       <h2 class="section-title">Abstract</h2>
-      <p>...</p>
+      <p style="text-align: justify;">
+         Robots are increasingly deployed across diverse domains and designed for multi-purpose operation.
+         As robotic systems grow in complexity and operate in dynamic environments, the need for structured, expressive,
+         and scalable mission-specification approaches becomes critical, with mission specifications often defined in
+         the field by domain experts rather than robotics specialists.
+         However, there is no standard or widely accepted formalism for specifying missions in single- or multi-robot
+         systems. A variety of formalisms, such as Behavior Trees, State Machines, Hierarchical Task Networks, and
+         Business Process Model and Notation, have been adopted in robotics to varying degrees, each providing different
+         levels of abstraction, expressiveness, and support for integration with human workflows and external devices.
+
+         This work presents a systematic analysis of these four formalisms with respect to their suitability for robot
+         mission specification.
+         Our study focuses on mission-level descriptions rather than robot software development. We analyze their
+         underlying control structures and mission concepts, evaluate their expressiveness and limitations in modeling
+         real-world missions, and assess the extent of available tool support.
+         By comparing the formalisms and validating our findings with experts, we provide insights into their
+         applicability, strengths, and shortcomings in robotic system modeling. The results aim to support practitioners
+         and researchers in selecting appropriate modeling approaches for designing robust and adaptable robot and
+         multi-robot missions.
+      </p>
 
       <h2 class="section-title">Formalisms</h2>
       <div class="formalism-block">
          <span class="formalism">Behavior Trees (BT)</span>
-         <span>...</span>
+         <span>
+            A hierarchical control structure originally developed for video-game AI and widely adopted in robotics.
+            Missions are modeled as trees composed of control-flow nodes (e.g., sequence, fallback, parallel) and
+            execution nodes (actions and conditions).
+            Their tick-based execution enables strong support for reactive behavior and runtime monitoring.
+         </span>
       </div>
       <div class="formalism-block">
          <span class="formalism">State Machines (SM)</span>
-         <span>...</span>
+         <span>
+            An event-driven modeling formalism where system behavior is described through states and transitions.
+            Widely used in robotics for task-level control, SMs naturally express event handling, task status, and
+            reactive transitions.
+         </span>
       </div>
       <div class="formalism-block">
          <span class="formalism">Hierarchical Task Network (HTN)</span>
-         <span>...</span>
+         <span>
+            A planning-based formalism in which high-level tasks are recursively decomposed into subtasks until
+            executable actions are obtained.
+            HTNs emphasize deliberative planning and explicit pre/post-conditions, making them suitable for structured,
+            goal-oriented mission refinement.
+         </span>
       </div>
       <div class="formalism-block">
          <span class="formalism">Business Process Modeling Notation (BPMN)</span>
-         <span>...</span>
+         <span>
+            A standardized process-modeling language originating from business workflow management.
+            BPMN provides a rich graphical notation including tasks, events, gateways, and communication elements,
+            enabling explicit modeling of coordination, human interaction, and integration with external systems.
+         </span>
       </div>
 
       <h2 class="section-title">Research Questions</h2>
@@ -85,23 +121,51 @@
       <div class="rq-block">
          <div class="rq-text-group">
             <span class="rq-label">RQ3</span>
-            <span class="rq-text">Which and to what extent publicly available tools support the formalisms?</span>
+            <span class="rq-text">Which publicly available tools support the formalisms, and to what extent?</span>
          </div>
          <a class="btn btn-rq" href="pages/rq3.html">Tool Analysis</a>
       </div>
 
       <h2 class="section-title">Methodology</h2>
-      <p>...</p>
+      <p style="text-align: justify;">
+         Our study follows a three-phase research method.
+         First, we conducted a targeted literature review and analyzed the primary documentation of the four considered
+         formalisms: Behavior Trees (BT), State Machines (SM), Hierarchical Task Networks (HTN), and Business Process
+         Model and Notation (BPMN), to identify their control structures and mission-level abstractions.
+
+         Second, we modeled eleven robotic mission scenarios spanning multiple domains (e.g., healthcare, logistics,
+         agriculture) using each formalism. This enabled a systematic comparison of their expressiveness, peculiarities,
+         and limitations in realistic mission specifications. We also analyzed publicly available tools supporting each
+         formalism.
+
+         Finally, we validated our findings through a structured questionnaire survey and follow-up discussions with
+         domain experts, assessing completeness, correctness, and alignment with established practice.
+      </p>
       <img src="img/methodology.png" alt="Methodology Diagram" class="img-fluid my-3" style="width: 60%;">
 
 
       <h2 class="section-title">Authors</h2>
-      <p>...</p>
+
+      <div class="authors-card">
+         <p class="authors-names">
+            Gianluca Filippone · Sara Pettinari · Patrizio Pelliccione
+         </p>
+
+         <p class="authors-affiliation">
+            Gran Sasso Science Institute (GSSI)<br>
+            L'Aquila, Italy
+         </p>
+
+         <p class="authors-note">
+            *The first two authors contributed equally to this work. <br>
+            *Contact as: {name.surname}@gssi.it
+         </p>
+      </div>
    </div>
 
 
    <footer>
-      © 2025 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
+      © 2026 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
    </footer>
 
    <!-- Scripts -->

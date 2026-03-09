@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Evaluation">
+  <meta name="description" content="Evaluation – Expert Validation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Evaluation</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="../css/style.css">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
@@ -30,17 +31,177 @@
   </div>
 </nav>
 
-<!-- PAGE -->
 <div class="container py-5">
   <h1 class="section-title">Evaluation</h1>
-  <p>This page contains the evaluation...</p>
+  <p class="text-muted">
+    We validated the results of the comparative analysis through an expert questionnaire survey complemented by targeted follow-up interactions. Experts evaluated our findings in terms of
+    completeness, correctness, and alignment with established practice.
+  </p>
 
+  <div class="row mt-4">
+    <!-- On this page (optional) -->
+    <div class="col-lg-3 mb-4">
+      <div class="on-this-page">
+        <h2 class="on-this-page-title">On this page</h2>
+        <ul class="on-this-page-list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#design">Study design</a></li>
+          <li><a href="#participants">Participants</a></li>
+          <li><a href="#results">Results summary</a></li>
+          <li><a href="#materials">Materials &amp; data</a></li>
+          <li><a href="#sheet-preview">Spreadsheet preview</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="mb-4">
+        <h2 class="scenario-title">Overview</h2>
+        <p style="text-align: justify; margin-bottom: 0;">
+          The evaluation focuses on validating the results reported for RQ1-RQ3.
+          The survey includes Likert-type questions and structured qualitative feedback to support the interpretation
+          of disagreements and to refine the analysis where needed.
+        </p>
+      </section>
+
+      <!-- DESIGN -->
+      <section id="design" class="mb-4">
+        <h2 class="scenario-title">Study design</h2>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="pec-card">
+              <h3 class="pec-title">Questionnaire structure</h3>
+              <ul class="mb-0">
+                <li>Self-assessed expertise per formalism (1–5 scale)</li>
+                <li>Likert agreement questions (1–5 scale)</li>
+                <li>Mandatory open-text justification for ratings ≤ 3</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="pec-card">
+              <h3 class="pec-title">Follow-up interactions</h3>
+              <ul class="mb-0">
+                <li>Targeted to deepen/clarify critical feedback</li>
+                <li>Selection based on expertise and response insights</li>
+                <li>Synchronous/asynchronous depending on availability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="note mt-3">
+          <strong>Replication note:</strong> the full questionnaire and anonymized responses are provided in the replication package.
+          You can add links below in the “Materials &amp; data” section.
+        </div>
+      </section>
+
+      <!-- PARTICIPANTS -->
+      <section id="participants" class="mb-4">
+        <h2 class="scenario-title">Participants</h2>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="pec-card text-center">
+              <h3 class="pec-title mb-1">83</h3>
+              <p class="pec-text mb-0">Invitations sent</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pec-card text-center">
+              <h3 class="pec-title mb-1">29</h3>
+              <p class="pec-text mb-0">Complete responses</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pec-card text-center">
+              <h3 class="pec-title mb-1">34.94%</h3>
+              <p class="pec-text mb-0">Response rate</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-3 mb-0" style="text-align: justify;">
+          Responses were collected over four weeks (January 2026). The respondent group included a mix of academic and
+          industry profiles (e.g., PhD students, postdocs, researchers, professors, and practitioners), with an average
+          experience of approximately 8 years in robotic software engineering. Follow-up interactions were conducted in
+          February 2026.
+        </p>
+      </section>
+
+      <!-- RESULTS -->
+      <section id="results" class="mb-4">
+        <h2 class="scenario-title">Results summary</h2>
+
+        <div class="pec-card mb-3">
+          <h3 class="pec-title">RQ1 – Control structures and mission concepts</h3>
+          <p class="pec-text" style="margin-bottom: 0;">
+            Experts evaluated the mapping between formalism primitives and the control structures / mission concepts.
+            Feedback was used to confirm or refine the interpretation of constructs and the consistency of the mapping.
+          </p>
+        </div>
+
+        <div class="pec-card mb-3">
+          <h3 class="pec-title">RQ2 – Expressivity, peculiarities, and limitations</h3>
+          <p class="pec-text" style="margin-bottom: 0;">
+            Most respondents agreed with the expressed support levels and the identified strengths/weaknesses.
+            Disagreements mainly concerned concerns that can be addressed through implementation-level extensions
+            (e.g., time-dependent behavior, state saving &amp; resuming, explicit waiting), and were discussed and
+            integrated into the final observations.
+          </p>
+        </div>
+
+        <div class="pec-card">
+          <h3 class="pec-title">RQ3 – Tool support</h3>
+          <p class="pec-text" style="margin-bottom: 0;">
+            Experts validated the tool taxonomy (scope and capabilities), reported their familiarity with the tools, and
+            suggested missing tools or overlooked aspects. Feedback informed refinements of the tool tables and discussion.
+          </p>
+        </div>
+      </section>
+
+      <!-- MATERIALS -->
+      <section id="materials" class="mb-4">
+        <h2 class="scenario-title">Materials &amp; data</h2>
+        <p class="text-muted" style="margin-bottom: 0.75rem;">
+          <strong>Questionnaire:</strong> <a href="https://gssi-robotics.github.io/robotic-mission-formalisms-validation/" target="_blank" rel="noopener">Link to questionnaire</a>
+        </p>
+      </section>
+
+      <!-- GOOGLE SHEET PREVIEW -->
+      <section id="sheet-preview" class="section-outline mb-4">
+        <h2 class="scenario-title">Responses preview</h2>
+        <p class="text-muted" style="margin-bottom: 0.75rem;">
+          Anonymized responses spreadsheet (read-only).
+        </p>
+
+        <div class="ratio ratio-16x9 sheet-embed">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/1HJthBieSB3DbLg-oQMyyWZyyv70ebZJtsr-JaDqSe8g/edit?usp=sharing"
+            loading="lazy"
+            style="border:0;"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="mt-2 mb-0">
+          <a href="https://docs.google.com/spreadsheets/d/1HJthBieSB3DbLg-oQMyyWZyyv70ebZJtsr-JaDqSe8g/edit?usp=sharing" target="_blank" rel="noopener">
+            Open the spreadsheet in a new tab
+          </a>
+        </p>
+      </section>
+
+    </div>
+  </div>
 </div>
 
 <footer>
-  © 2025 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
+  © 2026 <em>Formalisms for Robotic Mission Specification and Execution: A Comparative Analysis</em>.
 </footer>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/script.js"></script>
