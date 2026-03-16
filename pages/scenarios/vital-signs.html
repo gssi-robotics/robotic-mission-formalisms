@@ -32,7 +32,7 @@
 
   <div class="container py-5">
     <h1 class="section-title">
-      Pick Ball
+      Vital Signs Monitoring
     </h1>
 
     <div class="row mt-4">
@@ -40,41 +40,50 @@
         <section class="section-outline mb-4">
           <h2 class="scenario-title">Description</h2>
           <p style="text-align: justify;">
-            A robot is tasked to find a ball, pick it up, and place it into a bin. If the
-            robot fails to complete the task, it should go to a safe position and wait for a human
-            operator. After picking up the ball, the robot moves towards the bin. While moving towards the bin, an
-            external entity takes the ball from
-            the robot’s gripper and immediately throws it in front of the robot,
-            where it can be seen. The robot aborts the execution of moving and
-            it starts to approach the ball again.
+            Every two hours, all patient's vital signs should be checked. Therefore, the assigned robot should visit
+            every occupied room. Before entering the room, the robot must check if the patient is available for vital
+            signs checking, and if there is enough battery to perform all the tasks inside the room. Hospital rooms may
+            have one or more beds. So the robot has to identify the correct patient either by asking or by scanning the
+            patients barcode. If the patient is not available, the robot should come back in 5 minutes. If there is not
+            enough battery, the robot should recharge and the tasks need to be reassigned. Once inside the room, the
+            robot should approach the patient, announce the procedure to be performed, and provide instructions to the
+            patient. The failure of collecting any necessary vital signs should trigger a set of questions to assess the
+            patient status for those signs that were failed to be
+            collected. In case of non-response, an alert should be sent to the responsible nurse/doctor. Once the
+            patient is checked, the robot should mark it as done and proceed to the next room.
           </p>
-          <p style="font-style: italic;"> Colledanchise, Michele, and Petter Ögren. Behavior trees in robotics and AI: An introduction. CRC Press, 2018.
+          <p style="font-style: italic;"> Askarpour, Mehrnoosh, et al. Robomax: Robotic mission adaptation exemplars. 2021 International Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS). IEEE, 2021.
           </p>
           <div class="scenario-tags mt-2 mb-3">
             <span class="tag">Reactive behavior</span>
+            <span class="tag">Decision making</span>
+            <span class="tag">Time-dependent behavior</span>
+            <span class="tag">Human-robot interaction</span>
           </div>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BT</h2>
-          <img src="../../img/scenarios/bt/pick-ball.png" alt="Pick Ball - Behavior Tree" class="img-fluid">
-          <caption>Pick Ball - Behavior Tree (from the referenced book)</caption>
+          <img src="../../img/scenarios/bt/vital-signs.png" alt="Vital Signs Monitoring - Behavior Tree" class="img-fluid">
+          <caption>Vital Signs Monitoring - Behavior Tree</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">SM</h2>
-          <img src="../../img/scenarios/sm/pick-ball.png" alt="Pick Ball - State Machine" class="img-fluid">
-          <caption>Pick Ball - State Machine (from the referenced book)</caption>
+          <img src="../../img/scenarios/sm/vital-signs.png" alt="Vital Signs Monitoring - State Machine" class="img-fluid">
+          <caption>Vital Signs Monitoring - State Machine</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">HTN</h2>
+          <img src="../../img/scenarios/htn/vital-signs.png" alt="Vital Signs Monitoring - HTN" class="img-fluid">
+          <caption>Vital Signs Monitoring - HTN</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BPMN</h2>
-          <img src="../../img/scenarios/bpmn/pick-ball.png" alt="Pick Ball - BPMN" class="img-fluid">
-          <caption>Pick Ball - BPMN</caption>
+          <img src="../../img/scenarios/bpmn/vital-signs.png" alt="Vital Signs Monitoring - BPMN" class="img-fluid">
+          <caption>Vital Signs Monitoring - BPMN</caption>
         </section>
 
       </div>

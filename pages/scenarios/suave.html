@@ -32,7 +32,7 @@
 
   <div class="container py-5">
     <h1 class="section-title">
-      Warehouse Automation
+      SUAVE
     </h1>
 
     <div class="row mt-4">
@@ -40,51 +40,52 @@
         <section class="section-outline mb-4">
           <h2 class="scenario-title">Description</h2>
           <p style="text-align: justify;">
-            New orders arrive periodically and must be processed by coordinating workers and a mobile robot in the
-            warehouse. When a new order is detected, the system identifies the list of raw materials required for its
-            fulfillment. Before starting, the system assigns the order to an available robot.
-            For each required material, the system also determines the storage location. A worker must meet the robot at
-            the designated location and load the correct amount of material.
-            After the loading operation, the worker confirms completion, and the system verifies that the loaded
-            quantity matches the expected weight. If the check fails, the worker must correct the loading before the
-            robot proceeds.
-            Once loaded, the robot transports the material to the mixing area, where it is manually unloaded by a
-            worker. The process then continues with the next material in the order. If all materials have been
-            delivered, the worker initiates the mixing procedure.
-            After the mixing phase begins, the system updates the order status to indicate completion. The robot then
-            returns to its home position and becomes available for the next order. If an error occurs at any point—for
-            example, a mismatch in material loading or an operational issue—the system notifies the worker, who must
-            decide whether to cancel the order or complete the remaining steps manually.
+            The use case in this exemplar is about an AUV inspecting pipelines located on a seabed. Its mission consists
+            of two sequential tasks, (T1) searching for the pipeline, then (T2) simultaneously following and inspecting
+            the pipeline.
+            When performing its mission, the AUV is subject to two sources of uncertainty that could trigger
+            self-adaptation: (U1) thruster failures and (U2) changes in water visibility. U1 arises from the possibility
+            of the AUV’s thrusters failing at runtime, which may cause the AUV to move unexpectedly. This is relevant
+            for both T1 and T2. To overcome U1, the managed subsystem of the AUV contains functional alternatives. When
+            one or more thrusters fail, it is possible to enter a recovery state in which the thrusters are
+            recovered. U2 influences the maximum distance at which the AUV can visually perceive objects. This is
+            relevant for T1, higher water visibility allows the AUV to search for the pipeline at higher altitudes,
+            resulting in a larger field of view and the possibility of discovering the pipeline faster. On the other
+            hand, if the water visibility is low, the AUV has to move closer to the seabed to search for the pipeline,
+            which limits its field of view and therefore may lead to a longer time to discover the
+            pipeline. Thus, changing the altitude of the AUV provides functional alternatives for dealing with U2.
           </p>
-          <p style="font-style: italic;"> Rey, Rafael, et al. "Human-robot co-working system for warehouse automation." 2019 24th IEEE International
-            Conference on Emerging Technologies and Factory Automation (ETFA). IEEE, 2019.
+          <p style="font-style: italic;"> Silva, Gustavo Rezende, et al. SUAVE: an exemplar for self-adaptive underwater vehicles. 2023 IEEE/ACM 18th Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS). IEEE, 2023.
           </p>
           <div class="scenario-tags mt-2 mb-3">
             <span class="tag">Reactive behavior</span>
             <span class="tag">Decision making</span>
-            <span class="tag">Human-robot interaction</span>
-            <span class="tag">Robot-external system interaction</span>
+            <span class="tag">State saving and task resuming</span>
           </div>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BT</h2>
+          <img src="../../img/scenarios/bt/suave.png" alt="SUAVE - Behavior Tree" class="img-fluid">
+          <caption>SUAVE - Behavior Tree</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
-          <h2 class="scenario-title">SM</h2>
-          <img src="../../img/scenarios/sm/warehouse-automation.png" alt="Warehouse Automation - State Machine" class="img-fluid">
-          <p class="caption">Warehouse Automation - State Machine</p>
+          <h2 class="scenario-title" style="font-size: 1.2em;">SM</h2>
+          <img src="../../img/scenarios/sm/suave.png" alt="SUAVE - State Machine" class="img-fluid">
+          <caption>SUAVE - State Machine</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">HTN</h2>
+          <img src="../../img/scenarios/htn/suave.png" alt="SUAVE - HTN" class="img-fluid">
+          <caption>SUAVE - HTN</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BPMN</h2>
-          <img src="../../img/scenarios/bpmn/warehouse-automation.png" alt="Warehouse Automation - BPMN" class="img-fluid">
-          <p class="caption">Warehouse Automation - BPMN (from the referenced paper)</p>
+          <img src="../../img/scenarios/bpmn/suave.png" alt="SUAVE - BPMN" class="img-fluid">
+          <caption>SUAVE - BPMN</caption>
         </section>
 
       </div>
@@ -99,7 +100,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../../js/script.js"></script>
 
 </body>
 
