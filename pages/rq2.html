@@ -51,7 +51,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Reactive behavior</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Behaviors that allow the robot to respond to events or errors requiring to perform additional actions.
           </p>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Decision making</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Choices made at runtime based on the current system state or overall context.
           </p>
         </div>
       </div>
@@ -69,7 +69,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Time-dependent behavior</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Behaviors that have to be executed periodically after a specified interval, triggered after a certain delay, or constrained by timeouts.
           </p>
         </div>
       </div>
@@ -78,7 +78,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Task status</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Tracking the execution status of an action,  e.g.., if it is completed, ongoing, or if an error occurred.
           </p>
         </div>
       </div>
@@ -87,7 +87,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Robot-robot interaction</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Direct interactions between multiple robots involved in the mission, such as inter-robot communication and synchronization.
           </p>
         </div>
       </div>
@@ -96,7 +96,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Human-robot interaction</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Explicit communication from the robot to the human and vice-versa, e.g., prompting instructions and getting human feedbacks, or tasks to be executed together with or only by humans.
           </p>
         </div>
       </div>
@@ -105,7 +105,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Robot-external system interaction</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Explicit communication between the robot and external systems, e.g., web services, databases, for sending/receiving data, commands, etc.
           </p>
         </div>
       </div>
@@ -114,7 +114,7 @@
         <div class="pec-card">
           <h3 class="pec-title">State saving and task resuming</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Pausing and resuming of the current execution, for allowing a temporary interruption of the current task for executing extraordinary actions (e.g., if an event or an error occurs), and resuming the mission afterwards.
           </p>
         </div>
       </div>
@@ -123,7 +123,7 @@
         <div class="pec-card">
           <h3 class="pec-title">Explicit waiting</h3>
           <p class="pec-text">
-            <!-- description here -->
+            Behaviors that keep the robot in a busy-form of waiting for specific events or conditions before starting or proceeding with the execution of the mission.
           </p>
         </div>
       </div>
@@ -426,11 +426,13 @@
 
       </div>
     </div>
-
     <div class="row mt-4" id="analysis-results">
       <h2 class="subsection-title mb-4">Analysis Results</h2>
+    
       <div class="table-responsive mt-4">
         <table class="table table-bordered table-sm align-middle expressivity-table">
+          <caption class="text-start text-center">Summary of model expressivity for mission concerns</caption>
+    
           <thead class="table-light">
             <tr>
               <th>Mission concern</th>
@@ -438,87 +440,96 @@
               <th>SM</th>
               <th>HTN</th>
               <th>BPMN</th>
+              <th><i>Rationale</i></th>
             </tr>
           </thead>
+    
           <tbody>
             <tr>
-              <td>Reactive Behavior</td>
+              <td><strong>Reactive behavior</strong></td>
               <td class="full">●</td>
               <td class="full">●</td>
               <td class="empty">○</td>
               <td class="full">●</td>
+              <td>BT and SM leverage their reactive nature and event-handling structures. BPMN features boundary events and event sub-processes. HTN does not support it.</td>
             </tr>
-
+    
             <tr>
-              <td>Decision making</td>
+              <td><strong>Decision making</strong></td>
               <td class="full">●</td>
               <td class="full">●</td>
               <td class="full">●</td>
               <td class="full">●</td>
+              <td>SM and BPMN feature conditional control structures for runtime decision-making. In BTs it is realized by combining fallbacks and sequence nodes. HTN relies on planning according to pre- and post-conditions associated to methods.</td>
             </tr>
-
+    
             <tr>
-              <td>Time-dependent behavior</td>
+              <td><strong>Time-dependent behavior</strong></td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="empty">○</td>
               <td class="full">●</td>
+              <td>In BT and SM it has to be realized by manually implementing the control of timing through condition nodes and state implementations, respectively. BPMN features timer events. HTN does not support it.</td>
             </tr>
-
+    
             <tr>
-              <td>Task Status</td>
+              <td><strong>Task status</strong></td>
               <td class="full">●</td>
               <td class="full">●</td>
               <td class="empty">○</td>
               <td class="full">●</td>
+              <td>BT, SM, and BPMN support it through the value returned by the tick, the events outgoing from a state, and the activity lifecycle, respectively. HTN does not support it.</td>
             </tr>
-
+    
             <tr>
-              <td>Robot-robot interaction</td>
+              <td><strong>Robot-robot interaction</strong></td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="full">●</td>
+              <td>BT, SM, and HTN rely on the action nodes, states, and tasks implementation, respectively. BPMN has dedicated structures, i.e., message and signal events for communication.</td>
             </tr>
-
+    
             <tr>
-              <td>Human-robot interaction</td>
+              <td><strong>Human-robot interaction</strong></td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="full">●</td>
+              <td>BT, SM, and HTN rely on the action nodes, states, and tasks implementation, respectively. BPMN supports user and manual tasks, and the explicit modeling of communication with message/signal events.</td>
             </tr>
-
+    
             <tr>
-              <td>Robot-external system interaction</td>
+              <td><strong>Robot-external system interaction</strong></td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="full">●</td>
+              <td>BT, SM, and HTN rely on the action nodes, states, and tasks implementation, respectively. BPMN has dedicated task types (service task, send task, receive task) and message/signal events.</td>
             </tr>
-
+    
             <tr>
-              <td>State saving and task resuming</td>
+              <td><strong>State saving and task resuming</strong></td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="empty">○</td>
               <td class="empty">○</td>
+              <td>BT offers control flow nodes with memory to keep track of the overall status of the mission, or can rely on a shared knowledge base (blackboards) to keep track of already executed tasks. SM requires ad hoc states and events to first pause and then resume the execution. HTN and BPMN do not support it.</td>
             </tr>
-
+    
             <tr>
-              <td>Explicit waiting</td>
+              <td><strong>Explicit waiting</strong></td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="half">◐</td>
               <td class="full">●</td>
+              <td>BT, SM, and HTN rely on the ad hoc implementation of action nodes, states, and tasks, respectively. BPMN supports intermediate events of different types.</td>
             </tr>
-
           </tbody>
         </table>
       </div>
-
     </div>
-
+  
   </div>
 
 
