@@ -32,7 +32,7 @@
 
   <div class="container py-5">
     <h1 class="section-title">
-      Keeping Clean
+      Welcoming People to Hospital
     </h1>
 
     <div class="row mt-4">
@@ -40,51 +40,48 @@
         <section class="section-outline mb-4">
           <h2 class="scenario-title">Description</h2>
           <p style="text-align: justify;">
-            Every room that reaches more than 1 cfu/cm<sup>2</sup> of Staphylococcus aureus must be cleaned within the
-            next 30
-            minutes. The assigned robot must check if it has all the resources to fulfill the tasks. In the case of
-            missing equipment, the robot must go to the storage room to collect the equipment or assign the
-            go-to-storage task to a colleague. As the robot reaches the room, it must check if it is occupied. If the
-            room is occupied, a message should be sent to the manager and the mission aborted.
-            Otherwise, the robot should enter the room and mark it as occupied. The cleaning task must be performed in
-            order: (i) change the furniture's covers, towels, and clothes; (ii) vacuum the floor, moving furniture when
-            necessary; (iii) wipe the floor, and (iv) sterilize all furniture and equipment in the room. In case of
-            failure in performing any of the steps, it immediately warns the sector manager, but does not stop executing
-            the mission. In case of a low battery, recharge it and come back to finish the task.
+            A robot should identify visitors or patients, and then, thanks to the robot's connection to the hospital's
+            administrative database, the robot would indicate where the patient should go. If the patient needs help to
+            reach the destination, the robot would send a request for help to the professional who is managing the
+            entrance to decide if the robot can leave its position at that moment to accompany the person to his/her
+            destination, or should wait in its position. At all times, the healthcare operator who is waiting for the
+            person will know the exact place where the patient is. Visitors can also be helped. The robot can help the
+            person find the destination or the closest information point in the ward. While idle, the robot can begin
+            extra tasks if a human request does not preempt them, such as the identification of patients with fever.
           </p>
           <p style="font-style: italic;"> Askarpour, Mehrnoosh, et al. Robomax: Robotic mission adaptation exemplars. 2021 International Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS). IEEE, 2021.
           </p>
           <div class="scenario-tags mt-2 mb-3">
             <span class="tag">Reactive behavior</span>
             <span class="tag">Decision making</span>
-            <span class="tag">Time-dependent behavior</span>
+            <span class="tag">Human-robot interaction</span>
             <span class="tag">Robot-external system interaction</span>
-            <span class="tag">State saving and task resuming</span>
+            <span class="tag">Explicit waiting</span>
           </div>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BT</h2>
-          <img src="../../img/scenarios/bt/keeping-clean.png" alt="Keeping Clean - Behavior Tree" class="img-fluid">
-          <caption>Keeping Clean - Behavior Tree</caption>
+          <img src="../../img/scenarios/bt/welcome-people.png" alt="Welcoming People to Hospital - Behavior Tree" class="img-fluid">
+          <p class="caption">Welcoming People to Hospital - Behavior Tree</p>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
-          <h2 class="scenario-title" style="font-size: 1.2em;">SM</h2>
-          <img src="../../img/scenarios/sm/keeping-clean.png" alt="Keeping Clean - State Machine" class="img-fluid">
-          <caption>Keeping Clean - State Machine</caption>
+          <h2 class="scenario-title">SM</h2>
+          <img src="../../img/scenarios/sm/welcome-people.png" alt="Welcoming People to Hospital - State Machine" class="img-fluid">
+          <p class="caption">Welcoming People to Hospital - State Machine</p>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">HTN</h2>
-          <img src="../../img/scenarios/htn/keeping-clean.png" alt="Keeping Clean - HTN" class="img-fluid">
-          <caption>Keeping Clean - HTN</caption>
+          <img src="../../img/scenarios/htn/welcome-people.png" alt="Welcoming People to Hospital - HTN" class="img-fluid">
+          <p class="caption">Welcoming People to Hospital - HTN</p>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BPMN</h2>
-          <img src="../../img/scenarios/bpmn/keeping-clean.png" alt="Keeping Clean - BPMN" class="img-fluid">
-          <caption>Keeping Clean - BPMN</caption>
+          <img src="../../img/scenarios/bpmn/welcome-people.png" alt="Welcoming People to Hospital - BPMN" class="img-fluid">
+          <p class="caption">Welcoming People to Hospital - BPMN</p>
         </section>
 
       </div>
@@ -99,7 +96,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 

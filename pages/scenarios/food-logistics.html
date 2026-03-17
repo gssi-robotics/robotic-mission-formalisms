@@ -32,7 +32,7 @@
 
   <div class="container py-5">
     <h1 class="section-title">
-      Keeping Clean
+      Food Logistics
     </h1>
 
     <div class="row mt-4">
@@ -40,51 +40,57 @@
         <section class="section-outline mb-4">
           <h2 class="scenario-title">Description</h2>
           <p style="text-align: justify;">
-            Every room that reaches more than 1 cfu/cm<sup>2</sup> of Staphylococcus aureus must be cleaned within the
-            next 30
-            minutes. The assigned robot must check if it has all the resources to fulfill the tasks. In the case of
-            missing equipment, the robot must go to the storage room to collect the equipment or assign the
-            go-to-storage task to a colleague. As the robot reaches the room, it must check if it is occupied. If the
-            room is occupied, a message should be sent to the manager and the mission aborted.
-            Otherwise, the robot should enter the room and mark it as occupied. The cleaning task must be performed in
-            order: (i) change the furniture's covers, towels, and clothes; (ii) vacuum the floor, moving furniture when
-            necessary; (iii) wipe the floor, and (iv) sterilize all furniture and equipment in the room. In case of
-            failure in performing any of the steps, it immediately warns the sector manager, but does not stop executing
-            the mission. In case of a low battery, recharge it and come back to finish the task.
+            The system should deliver food from the kitchen to an inpatient room. The delivery is made on an
+            order-by-order basis in response to kitchen delivery requests. The food can be delivered into a room table
+            by the robot (requires a special manipulation robot skill) or the food can be fetched from the robot's tray.
+            Fetching from the robot tray requires cooperation with the inpatient, a companion, a nurse, or another
+            robot.
+            Some inpatients could be unable to fetch the food from the tray, and a companion visitor or nurse could not
+            be available at the moment of the delivery. The information about if the inpatient, a companion visitor or
+            nurse can be able to retrieve the food from the tray can be obtained based on the inpatient record according
+            to information about the patient and the presence of a companion into the room.
+            This information is subject to uncertainty.
+            The robot can carry multiple meals, in the case of a person retrieving the meal the robot should indicate
+            which meal should be retrieved by a given inpatient. It should track when and where each meal was retrieved.
+            The robot should alert if a wrong meal is retrieved. Dirty dishes should be retrieved from the room. As with
+            delivery, the dish retrieve can occur unassisted, with the cooperation of two robots or with the cooperation
+            of robots and a human. Opening the room door can involve cooperation with another robot or a human. Someone
+            in the room can call a robot to pick up the dishes. In that case, that person can signal if they can open
+            the door when the robot comes to it.
           </p>
           <p style="font-style: italic;"> Askarpour, Mehrnoosh, et al. Robomax: Robotic mission adaptation exemplars. 2021 International Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS). IEEE, 2021.
           </p>
           <div class="scenario-tags mt-2 mb-3">
             <span class="tag">Reactive behavior</span>
             <span class="tag">Decision making</span>
-            <span class="tag">Time-dependent behavior</span>
+            <span class="tag">Human-robot interaction</span>
+            <span class="tag">Robot-robot interaction</span>
             <span class="tag">Robot-external system interaction</span>
-            <span class="tag">State saving and task resuming</span>
           </div>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BT</h2>
-          <img src="../../img/scenarios/bt/keeping-clean.png" alt="Keeping Clean - Behavior Tree" class="img-fluid">
-          <caption>Keeping Clean - Behavior Tree</caption>
+          <img src="../../img/scenarios/bt/food-logistics.png" alt="Food Logistics - Behavior Tree" class="img-fluid">
+          <caption>Food Logistics - Behavior Tree</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
-          <h2 class="scenario-title" style="font-size: 1.2em;">SM</h2>
-          <img src="../../img/scenarios/sm/keeping-clean.png" alt="Keeping Clean - State Machine" class="img-fluid">
-          <caption>Keeping Clean - State Machine</caption>
+          <h2 class="scenario-title">SM</h2>
+          <img src="../../img/scenarios/sm/food-logistics.png" alt="Food Logistics - State Machine" class="img-fluid">
+          <caption>Food Logistics - State Machine</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">HTN</h2>
-          <img src="../../img/scenarios/htn/keeping-clean.png" alt="Keeping Clean - HTN" class="img-fluid">
-          <caption>Keeping Clean - HTN</caption>
+          <img src="../../img/scenarios/htn/food-logistics.png" alt="Food Logistics - HTN" class="img-fluid">
+          <caption>Food Logistics - HTN</caption>
         </section>
 
         <section id="scenario-warehouse" class="section-outline mb-4">
           <h2 class="scenario-title">BPMN</h2>
-          <img src="../../img/scenarios/bpmn/keeping-clean.png" alt="Keeping Clean - BPMN" class="img-fluid">
-          <caption>Keeping Clean - BPMN</caption>
+          <img src="../../img/scenarios/bpmn/food-logistics.png" alt="Food Logistics - BPMN" class="img-fluid">
+          <caption>Food Logistics - BPMN</caption>
         </section>
 
       </div>
@@ -99,7 +105,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 
